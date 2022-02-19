@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>角色管理</title>
+  <!--/*-->
+  <link rel="stylesheet" href="../../static/libs/layui/css/layui.css">
+  <script src="../../static/libs/layui/layui.js"></script>
+  <!--*/-->
+</head>
+<body>
+<div style="padding-top: 50px;">
+  <table id="demoTb1"></table>
+</div>
+</body>
+<script type="text/html" id="checkDel">
+  <div class="layui-btn-container">
+    <button type="button" class="layui-btn" lay-event="add">新增</button>
+    <button type="button" class="layui-btn layui-btn-danger" lay-event="delCheck">删除选中</button>
+  </div>
+</script>
+<!-- 表格操作列 -->
+<script type="text/html" id="tbBar">
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">修改</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script>
+  var insTb;
+  layui.config({
+    base: '../../static/libs/layui/lay/modules/'
+  }).use(['treeTable', 'layer'], function () {
+    var $ = layui.jquery;
+    var treeTable = layui.treeTable;
+    var layer = layui.layer;
+
+    var data = [{
+      "id": '1',
+      "name": 'xxx',
+      "createTime": '2019/11/18 10:44:00',
+      "updateTime": '2019/11/18 10:44:00',
+    }, {
+      "parentId": '1',
+      "id": '1_1',
+      "name": 'xxx',
+      "createTime": '2019/11/18 10:44:00',
+      "updateTime": '2019/11/18 10:44:00',
+    },{
+      "id": '2',
+      "name": 'xxx',
+      "createTime": '2019/11/18 10:44:00',
+      "updateTime": '2019/11/18 10:44:00',
+    },{
+      "parentId": '2',
+      "id": '2_1',
+      "name": 'xxx',
+      "createTime": '2019/11/18 10:44:00',
+      "updateTime": '2019/11/18 10:44:00',
+    }];
+
+    // 渲染表格
+    insTb = treeTable.render({
+      elem: '#demoTb1',
+      url: "/role/list",
+      // data: data,  // 数据
+      toolbar: "#checkDel",
+      tree: {
+        iconIndex: 2,    // 折叠图标显示在第几列
+        isPidData: true,  // 是否是pid形式数据
+        pidName: "parentId"
+      },
+      cols: [
+        [
+          {type: 'checkbox'},
+          {field: 'id', title: 'ID'},
+          {field: 'name', title: '角色名称'},
+          {
+          field: 'createTime', title: '创建时间', width: 160, sort: true,
+        }
+          , {
+          field: 'updateTime', title: '修改时间', sort: true,
+        },
+          {align: 'center', toolbar: '#tbBar', title: '操作'}
+        ]
+      ]
+    });
+
+    treeTable.on("tool(demoTb1)", function (obj) {
+      var data = obj.data;
+      var event = obj.event;
+
+      if (event === "del") {
+        obj.del();
+        // 调用后台接口，删除数据
+        $.ajax({
+          url: "/role/delete/" + data.id,
+          type: "DELETE",
+          dataType: "json",
+          success: function (resp) {
+            console.log(resp.message);
+            insTb.reload();
+          }
+        });
+      }else if (event === "edit") {
+        layer.open({
+          id: "addRole",
+          type: 2,
+          title: '修改角色',
+          shadeClose: true,
+          shade: false,
+          maxmin: true, //开启最大化最小化按钮
+          area: ['670px', '400px'],
+          content: '/role/view/' + data.id, //iframe的url，no代表不显示滚动条
+          btn: ["确定"],
+          yes: function (index, layero) {
+            var body = layer.getChildFrame("iframe", index);
+            var iframe = window[layero.find("iframe")[0]["name"]];
+            iframe.addRole(index);
+          }
+        });
+      }
+    });
+
+    treeTable.on("toolbar(demoTb1)", function (obj) {
+      var event = obj.event;
+      var checkStatus = insTb.checkStatus();
+
+      if (event === "delCheck") {
+        var ids = [];
+        for (let item of checkStatus) {
+          ids.push(item.id);
+        }
+        console.log(ids);
+        // $.ajax({
+        //   url: "/role/delete",
+        //   type: "DELETE",
+        //   contentType: "application/json",
+        //   data: JSON.stringify(ids),
+        //   dataType: "json",
+        //   success: function (resp) {
+        //     console.log(resp.message);
+        //     insTb.reload();
+        //   }
+        // });
+      } else if (event === "add") {
+        layer.open({
+          id: "addRole",
+          type: 2,
+          title: '新增角色',
+          shadeClose: true,
+          shade: false,
+          maxmin: true, //开启最大化最小化按钮
+          area: ['670px', '400px'],
+          content: '/role/add', //iframe的url，no代表不显示滚动条
+          btn: ["确定"],
+          yes: function (index, layero) {
+            var body = layer.getChildFrame("iframe", index);
+            var iframe = window[layero.find("iframe")[0]["name"]];
+            iframe.addRole(index);
+          }
+        });
+      }
+    });
+  });
+</script>
+</html>

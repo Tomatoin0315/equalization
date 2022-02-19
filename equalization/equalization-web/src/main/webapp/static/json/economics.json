@@ -1,0 +1,78 @@
+{
+  "code": 0,
+  "msg": "ok",
+  "data": [
+    {
+      "id": "001",
+      "indicator": "资金",
+      "region": {
+        "id": 1,
+        "parentId": 0,
+        "name": "北京",
+        "createTime": "xxx",
+        "updateTime": "xxx"
+      },
+      "field": {
+        "id": 1,
+        "name": "教育",
+        "createTime": "xxx",
+        "updateTime": "xxx"
+      },
+      "year": "2020",
+      "value": "120",
+      "createTime": "xxx",
+      "updateTime": "xxx"
+    },
+    {
+      "id": "001",
+      "indexName": "资金1",
+      "area": "北京",
+      "field": "教育",
+      "year": "2020",
+      "indexValue": "120"
+    },
+    {
+      "id": "001",
+      "indicator": "资金xxx",
+      "region": {
+        "id": 1,
+        "parentId": 0,
+        "name": "北京",
+        "createTime": "xxx",
+        "updateTime": "xxx"
+      },
+      "field": {
+        "id": 1,
+        "name": "教育",
+        "createTime": "xxx",
+        "updateTime": "xxx"
+      },
+      "year": "2020",
+      "value": "120",
+      "createTime": "xxx",
+      "updateTime": "xxx"
+    },
+    {
+      "id": "001",
+      "indicator": "资金ss",
+      "region": {
+        "id": 1,
+        "parentId": 0,
+        "name": "北京",
+        "createTime": "xxx",
+        "updateTime": "xxx"
+      },
+      "field": {
+        "id": 1,
+        "name": "教育",
+        "createTime": "xxx",
+        "updateTime": "xxx"
+      },
+      "year": "2020",
+      "value": "120",
+      "createTime": "xxx",
+      "updateTime": "xxx"
+    }
+  ],
+  "count": 100
+}

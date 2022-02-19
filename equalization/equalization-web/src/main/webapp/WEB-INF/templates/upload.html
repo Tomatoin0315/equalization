@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传经济数据</title>
+    <!--/*-->
+    <link rel="stylesheet" href="../../static/libs/layui/css/layui.css">
+    <script src="../../static/libs/layui/layui.js"></script>
+    <!--*/-->
+</head>
+
+<body>
+
+<button type="button" class="layui-btn" id="test1">
+    <i class="layui-icon">&#xe67c;</i>上传经济数据
+</button>
+<button type="button" class="layui-btn" id="test2">
+    <i class="layui-icon">&#xe67c;</i>上传政策数据
+</button>
+</body>
+<script>
+    layui.use('upload', function () {
+        var upload = layui.upload;
+
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#test1' //绑定元素
+            , url: '/economy/upload' //上传接口
+            ,accept: 'file' //普通文件
+            ,exts: 'xls|excel|xlsx' //只允许上传压缩文件
+            ,type:'post'
+            , done: function (res) {
+                //上传完毕回调
+            }
+            , error: function () {
+                //请求异常回调
+            }
+        });
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#test2' //绑定元素
+            , url: '/policy/upload' //上传接口
+            ,accept: 'file' //普通文件
+            ,exts: 'xls|excel|xlsx' //只允许上传压缩文件
+            ,type:'post'
+            , done: function (res) {
+                //上传完毕回调
+            }
+            , error: function () {
+                //请求异常回调
+            }
+        });
+    });
+</script>
+</html>

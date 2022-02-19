@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: com.ktz.equalization.mapper.PermissionMapperTests
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.028 s <<< FAILURE! - in com.ktz.equalization.mapper.PermissionMapperTests
+updateTest(com.ktz.equalization.mapper.PermissionMapperTests)  Time elapsed: 0.002 s  <<< ERROR!
+org.mybatis.spring.MyBatisSystemException: 
+nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error updating database.  Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String
+### Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String
+	at com.ktz.equalization.mapper.PermissionMapperTests.updateTest(PermissionMapperTests.java:61)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+
+### Error updating database.  Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String
+### Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String
+	at com.ktz.equalization.mapper.PermissionMapperTests.updateTest(PermissionMapperTests.java:61)
+Caused by: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String
+	at com.ktz.equalization.mapper.PermissionMapperTests.updateTest(PermissionMapperTests.java:61)
+

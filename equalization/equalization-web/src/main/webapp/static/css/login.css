@@ -1,0 +1,65 @@
+body{
+  margin: auto;
+  padding: auto;
+  background-color: #f1f3f6;
+}
+.wel{
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 30px;
+}
+.login{
+  width: 500px;
+  height: 420px;
+  /* 一下四行：居中 */
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: #ebebeb solid 1px;
+  background: #ffffff;
+}
+.login-title{
+height: 40px;
+line-height: 40px;
+font-size: 20px;
+margin-left: 30px;
+cursor: default;
+}
+.email{
+  margin: 10px 0 10px 0;
+}
+.email input{
+  width: 400px;
+  height: 40px;
+  border-radius: 6px;
+}
+.password{
+  margin: 10px 0 10px 0;
+}
+.password input{
+  width: 400px;
+  height: 40px; 
+  border-radius: 6px;
+}
+.login-content{
+  margin-left: 50px;
+}
+.select{
+  margin-left: 220px;
+}
+.login-btn{
+  text-align: center;
+}
+.register{
+  width: 50%;
+  margin: 20px auto 0px auto;
+  line-height: 40px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+}

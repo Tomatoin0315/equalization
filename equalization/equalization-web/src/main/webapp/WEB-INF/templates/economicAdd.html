@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增用户</title>
+    <link rel="stylesheet" href="../../static/libs/layui/css/layui.css">
+    <script src="../../static/libs/layui/layui.js"></script>
+    <script src="../../static/js/jquery.min.js"></script>
+</head>
+
+<body>
+<form class="layui-form" action="" style="padding-top: 50px;padding-right:50px ;">
+    <div class="layui-form-item">
+        <label class="layui-form-label">指标名</label>
+        <div class="layui-input-block">
+            <input type="text" name="indicator" required lay-verify="required" placeholder="请输入指标名称" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">地区</label>
+        <div class="layui-input-block">
+            <input type="text" name="regionId" required lay-verify="required" placeholder="请输入所在地区" autocomplete="off"
+                   class="layui-input" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">相关领域</label>
+        <div class="layui-input-inline">
+            <input type="text" name="field" required lay-verify="required" placeholder="请输入相关领域" autocomplete="off"
+                   class="layui-input" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">年份</label>
+        <div class="layui-input-block">
+            <input type="text" name="year" required lay-verify="required" placeholder="请输入出台年份" autocomplete="off"
+                   class="layui-input" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">指标值</label>
+        <div class="layui-input-block">
+            <input type="text" name="value" required lay-verify="required" placeholder="请输入出台年份" autocomplete="off"
+                   class="layui-input" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+        </div>
+    </div>
+</form>
+<script>
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+        form.render();
+        form.on('submit(formDemo)', function (data) {
+            console.log(JSON.stringify(data.field));
+            //调用接口上传数据
+            $.ajax({
+                url:'/economy/insertOne',
+                type:"POST",
+                contentType:"application/json",
+                data:JSON.stringify(data.field),
+                dataType:"JSON",
+                success:function (resp){
+                    console.log(resp);
+                }
+            })
+            return false;
+        });
+    });
+</script>
+</body>
+
+</html>

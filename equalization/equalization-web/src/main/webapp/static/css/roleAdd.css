@@ -1,0 +1,48 @@
+body{
+  padding: 0;
+  margin: 0;
+}
+.pop{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 600px;
+  height: 500px;
+  border: #ebebeb solid 1px;
+  box-shadow: 0 0 20px #ddd;
+  transform: translate(-50%,-50%);
+  z-index: 9999;
+}
+.role{
+  margin-top: 30px;
+}
+.power{
+  margin-top: 35px;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  /* background-color: #f0f0f0; */
+  text-align: right;
+}
+.layui-form-item{
+  margin-right: 30px;
+}
+.footer .layui-btn{
+  margin-right: 15px;
+}
+/* 遮盖层 固定定位 */
+/* .bg {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, .3);
+} */

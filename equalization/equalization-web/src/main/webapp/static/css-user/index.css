@@ -1,0 +1,53 @@
+
+/* 顶部开始 */
+.top{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.top img{
+  width: 100%;
+  height: 100%;
+  /* 去除图片底部空白 */
+  vertical-align: middle;
+}
+.top .title{
+  position: absolute;
+  z-index: 2;
+  left: 30%;
+  top: 30%;
+  color: #ef4136;
+  font-size: 36px;
+}
+/* 顶部结束 */
+/* 导航开始 */
+.nav{
+  position: relative;
+  background-color: red;
+  width: 100%;
+  height: 65px;
+  margin-top: -16px;
+}
+.nav .current{
+  background-color: #fff;
+  color: red;
+}
+.nav li{
+  float: left;
+  height: 65px;
+  line-height: 65px;
+  text-align: center;
+  padding: 0 40px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 16px
+}
+.nav .me{
+  position: absolute;
+  right: 40px;
+}
+.nav .me a{
+  color: #ffffff;
+  font-size: 16px;
+}
+/* 导航结束 */

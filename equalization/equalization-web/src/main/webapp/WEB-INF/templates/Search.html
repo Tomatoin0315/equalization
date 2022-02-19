@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../static/libs/layui/css/layui.css" media="all">
+    <style type="text/css">
+        .input{
+            width: 80%;
+            height: 60px;
+            border:2px solid #000;
+            border-radius: 50px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-row" style="height: 50px"></div>
+<div class="layui-row">
+    <div class=" layui-col-xs12">
+        <span style="margin-left: 46%"> <i class="layui-icon" style="font-size: 80px;">&#xe606;</i></span>
+    </div>
+</div>
+<div class="layui-row">
+    <div class="layui-col-xs-offset4 layui-col-xs4" style="height: 60px">
+
+        <h1 style="font-size:30px;text-align: center">基本公共服务均等化智能问答</h1>
+    </div>
+</div>
+<div class="layui-row" style="height: 100px">
+    <div class="layui-col-xs-offset4 layui-col-xs4">
+        <input type="text" class="input" id="ttt" style="width: 80%;float: left;padding-left: 20px;box-sizing: border-box;">
+        <!--        <span class="submit" id="search"></span>-->
+        <button type="button" id="search" class="layui-btn layui-btn-primary layui-btn-big" style="float: right;height: 60px"><i class="layui-icon" style="font-size: 40px;">&#xe615;</i></button>
+    </div>
+</div>
+<div class="layui-row">
+    <div class="layui-col-xs-offset4 layui-col-xs4">
+        <span id="kefu"><i class="layui-icon" style="font-size: 40px;display: none">&#xe606;</i></span> <span style="font-size: 20px" id="LAY_layedit_code"></span>
+    </div>
+</div>
+<script type="text/javascript" src="../../static/libs-user/jquery.min.js"></script>
+<script type="text/javascript" src="../../static/libs/layui/layui.js"></script>
+<script type="text/javascript">
+    $("#search").click(function () {
+        var data=$("#ttt").val();
+        $.ajax({
+            url:'/question',
+            type:'get',
+            dataType:'json',
+            data:{
+                str:data
+            },
+            success:function (data) {
+                console.log(data);
+                if (data.length!=0){
+                    $("#kefu").css("display","block");
+                    var s="";
+                    for (var i=0;i<data.length;i++){
+                        if (i===data.length-1){
+                            s+=data[i];
+                        }else {
+                            s+=data[i]+"、";
+                        }
+                    }
+                    $("#LAY_layedit_code").text(s);
+                }else {
+                    $("#LAY_layedit_code").text("抱歉，没有找到您想要的答案");
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

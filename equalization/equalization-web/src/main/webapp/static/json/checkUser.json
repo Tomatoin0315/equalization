@@ -1,0 +1,39 @@
+{
+  "code": 0,
+  "msg": "ok",
+  "data": [
+    {
+      "id": "001",
+      "username": "张三",
+      "phone": "13245890583",
+      "email": "234890@qq.com",
+      "createTime": "2020-12-09",
+      "updateTime": "2020-12-21"
+    },
+    {
+      "id": "001",
+      "username": "李四",
+      "phone": "13245890583",
+      "email": "234890@qq.com",
+      "createTime": "2020-12-09",
+      "updateTime": "2020-12-21"
+    },
+    {
+      "id": "001",
+      "username": "小红",
+      "phone": "13245890583",
+      "email": "234890@qq.com",
+      "createTime": "2020-12-09",
+      "updateTime": "2020-12-21"
+    },
+    {
+      "id": "001",
+      "username": "小明",
+      "phone": "13245890583",
+      "email": "234890@qq.com",
+      "createTime": "2020-12-09",
+      "updateTime": "2020-12-21"
+    }
+  ],
+  "count": 100
+}

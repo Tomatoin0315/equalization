@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>查看经济数据</title>
+  <!--/*-->
+  <link rel="stylesheet" href="../../static/libs/layui/css/layui.css">
+  <link rel="stylesheet" href="../../static/css/economics.css">
+  <script src="../../static/libs/layui/layui.js"></script>
+  <!--*/-->
+</head>
+
+<body>
+<div style="padding-top: 50px;">
+  <table id="demo" lay-filter="test" class="layui-table"></table>
+</div>
+<!-- 表格工具栏 -->
+<script type="text/html" id="toolbarDemo">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-danger" lay-event="del">删除</button>
+    <button type="button" class="layui-btn" lay-event="add">新增</button>
+  </div>
+</script>
+<!-- 表头工具栏 -->
+<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script>
+  layui.use('table', function () {
+    var table = layui.table;
+
+    //第一个实例
+    var tempTa=table.render({
+      elem: '#demo'
+      , height: 600
+      , url: '/economy/list', //数据接口
+      page: true //开启分页
+      , cols: [
+        [ //表头
+          { type: 'checkbox' },
+          { field: 'id', title: 'ID', type: 'numbers' }
+          , { field: 'indicator', title: '指标名' ,width:250}
+          , { field: 'region.name', title: '地区',width: 75,
+          templet: function (d) {
+            return d.region.name;
+          }
+        }
+          , { field: 'field.name', title: '领域',width: 125,
+          templet: function (d) {
+            return d.field.name;
+          }
+        }
+          , { field: 'year', title: '年份',width:75, sort: true }
+          , { field: 'value', title: '指标值',width:90, sort: true }
+          , {
+          field: 'createTime', title: '创建时间', width: 160, sort: true,
+        }
+          , {
+          field: 'updateTime', title: '修改时间', sort: true,
+        }
+          , { title: '操作', toolbar: '#barDemo' }//表头工具栏
+        ]
+      ],
+      //设置表格工具栏
+      toolbar: '#toolbarDemo',
+    });
+
+    table.on("tool(test)", function (obj) {
+      var data = obj.data;
+      var event = obj.event;
+
+      if (event === "del") {
+        obj.del();
+        // 调用后台接口，删除数据
+        $.ajax({
+          type: "DELETE",
+          url: '/economy/deleteOne',
+          contentType:"application/json",
+          data: JSON.stringify(data.data.id),
+          dataType:"JSON",
+          success:function (){
+            tempTa.reload();
+          }
+        })
+      }
+    });
+
+    table.on("toolbar(test)", function (obj) {
+      var checkStatus = table.checkStatus(obj.config.id);
+      var event = obj.event;
+
+      if (event === "del") {
+        var ids = [];
+        for (let item of checkStatus.data) {
+          ids.push(item.id);
+        }
+        // 调用后台接口批量删除数据
+        $.ajax({
+          type: "DELETE",
+          url: '/economy/deleteMulti',
+          contentType:"application/json",
+          data: JSON.stringify(ids),
+          dataType:"JSON",
+          success:function () {
+            tempTa.reload();
+          }
+        })
+      } else if (event === "add"){
+        console.log("新增");
+        layer.open({
+          id: "economyAdd",
+          type: 2,
+          title: '经济数据新增',
+          shadeClose: true,
+          shade: false,
+          maxmin: true, //开启最大化最小化按钮
+          area: ['300px', '400px'],
+          content: '/economy/economyAdd',//iframe的url，no代表不显示滚动条
+          yes: function (index, layero) {
+            var body = layer.getChildFrame("iframe", index);
+            var iframe = window[layero.find("iframe")[0]["name"]];
+            iframe.econonmyAdd(index);
+          }
+        });
+      }
+    });
+  });
+</script>
+</body>
+
+</html>

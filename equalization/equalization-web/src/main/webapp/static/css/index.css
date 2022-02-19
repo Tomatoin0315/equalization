@@ -1,0 +1,12 @@
+body{
+  padding: auto;
+  margin: auto;
+}
+.me{
+  float: right!important;
+}
+.restore{
+  padding: 0 20px;
+  color: rgba(255, 255, 255, .7);
+  cursor: default;
+}

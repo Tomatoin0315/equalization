@@ -1,0 +1,91 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 100,
+  "data": [
+    {
+      "id": 10000,
+      "username": 29080,
+      "sex": 1290129,
+      "city": 20203,
+      "sign": 18283,
+      "experience": 1233,
+      "logins": 24232,
+      "wealth": 82830700,
+      "classify": 23123,
+      "score": 8978
+    },
+    {
+      "id": 10001,
+      "username": 238219,
+      "sex": 28792,
+      "city": 279392,
+      "sign": 28392,
+      "experience": 884,
+      "logins": 58232,
+      "wealth": 64928690,
+      "classify": 90838,
+      "score": 27092
+    },
+    {
+      "id": 10002,
+      "username": 79079,
+      "sex": 890992,
+      "city": 790029,
+      "sign": 89008,
+      "experience": 650,
+      "logins": 77890,
+      "wealth": 6298078,
+      "classify": 79002,
+      "score": 31877
+    },
+    {
+      "id": 10003,
+      "username": 68280,
+      "sex": 89092,
+      "city": 78023,
+      "sign": 8902,
+      "experience": 3623,
+      "logins": 1571,
+      "wealth": 37117017,
+      "classify": 89802,
+      "score": 688090
+    },
+    {
+      "id": 10004,
+      "username": 68280,
+      "sex": 89092,
+      "city": 78023,
+      "sign": 8902,
+      "experience": 3623,
+      "logins": 1571,
+      "wealth": 37117017,
+      "classify": 89802,
+      "score": 688090
+    },
+    {
+      "id": 10005,
+      "username": 68280,
+      "sex": 89092,
+      "city": 78023,
+      "sign": 8902,
+      "experience": 3623,
+      "logins": 1571,
+      "wealth": 37117017,
+      "classify": 89802,
+      "score": 688090
+    },
+    {
+      "id": 10006,
+      "username": 68280,
+      "sex": 89092,
+      "city": 78023,
+      "sign": 8902,
+      "experience": 3623,
+      "logins": 1571,
+      "wealth": 37117017,
+      "classify": 89802,
+      "score": 688090
+    }
+  ]
+}

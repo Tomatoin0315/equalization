@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: com.ktz.equalization.mapper.RegionMapperTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.018 s <<< FAILURE! - in com.ktz.equalization.mapper.RegionMapperTests
+insertOneTest(com.ktz.equalization.mapper.RegionMapperTests)  Time elapsed: 0.009 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: 
+
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`equalization`.`region`, CONSTRAINT `region_parent_id` FOREIGN KEY (`perent_id`) REFERENCES `region` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+### The error may involve com.ktz.equalization.mapper.RegionMapper.insertOne-Inline
+### The error occurred while setting parameters
+### SQL: insert into region         values (?, ?, ?, ?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`equalization`.`region`, CONSTRAINT `region_parent_id` FOREIGN KEY (`perent_id`) REFERENCES `region` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+; Cannot add or update a child row: a foreign key constraint fails (`equalization`.`region`, CONSTRAINT `region_parent_id` FOREIGN KEY (`perent_id`) REFERENCES `region` (`id`) ON DELETE CASCADE ON UPDATE CASCADE); nested exception is java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`equalization`.`region`, CONSTRAINT `region_parent_id` FOREIGN KEY (`perent_id`) REFERENCES `region` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+	at com.ktz.equalization.mapper.RegionMapperTests.insertOneTest(RegionMapperTests.java:31)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`equalization`.`region`, CONSTRAINT `region_parent_id` FOREIGN KEY (`perent_id`) REFERENCES `region` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+	at com.ktz.equalization.mapper.RegionMapperTests.insertOneTest(RegionMapperTests.java:31)
+

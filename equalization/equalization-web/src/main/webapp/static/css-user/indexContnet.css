@@ -1,0 +1,24 @@
+/* 底部新闻开始 */
+.news{
+  display: flex;
+  margin-top: 40px;
+}
+.left img{
+  width: 227px;
+  margin-right: 10px;
+}
+.right img{
+  width: 504px;
+}
+.left span{
+  display: inline-block;
+  width: 362px;
+  height: 155px;
+  cursor: default;
+}
+ p{
+  color: #666666;
+}
+.right{
+  margin-left: 50px;
+}

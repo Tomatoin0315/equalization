@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <link rel="stylesheet" href="../../static/css-user/index.css">
+  <link rel="stylesheet" href="../../static/css-user/base.css">
+  <script src="../../static/libs-user/jquery.min.js"></script>
+  <script src="../../static/js-user/index.js"></script>
+  <script src="../../static/js-user/ajax.js"></script>
+  <link rel="stylesheet" href="../../static/libs/layui/css/layui.css">
+  <link rel="stylesheet" href="../../static/libs/layui/css/modules/layer/default/layer.css">
+  <script src="../../static/js/jquery.min.js"></script>
+  <script src="../../static/libs/layui/layui.js"></script>
+</head>
+
+<body>
+  <!-- 顶部开始 -->
+  <div class="top">
+    <img src="../../static/assets/tapImg.jpg" alt="">
+    <div class="title">基本公共服务均等化智能服务系统</div>
+  </div>
+  <!-- 顶部结束 -->
+  <!-- 导航开始 -->
+  <div class="nav">
+    <ul class="navItem">
+      <li class="current aa" th:data-url="@{/indexContent-user}">首页</li>
+      <li th:data-url="@{/policy-user}" class="aa">政策查询</li>
+      <li th:data-url="@{/economy-user}" class="aa">经济数据</li>
+      <li th:data-url="@{/search}" class="aa">智能问答</li>
+      <li th:data-url="@{/economy-user}" class="aa"></li>
+      <!--      <li th:data-url="@{/personal-user}" class="aa">-->
+      <!--        个人中心-->
+      <!--      </li>-->
+    </ul>
+  </div>
+  <!-- 导航结束 -->
+  <!-- 内容部分 -->
+  <div id="content"></div>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "name": "研究生",
+    "open": true,
+    "children": [
+      {
+        "id": 2,
+        "name": "研究生毕（结）业生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 3,
+        "name": "女研究生毕（结）业生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 17,
+        "name": "研究生招生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 17,
+        "name": "研究生毕（结）业生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 17,
+        "name": "女研究生招生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 17,
+        "name": "女研究生毕（结）业生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 17,
+        "name": "研究生在校生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 17,
+        "name": "女研究生在校生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 17,
+        "name": "研究生预计毕业生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 17,
+        "name": "女研究生预计毕业生数（人）",
+        "open": false,
+        "checked": true
+      }
+    ],
+    "checked": true
+  },
+  {
+    "id": 4,
+    "name": "博士生",
+    "open": false,
+    "children": [
+      {
+        "id": 5,
+        "name": "博士研究生毕（结）业生数（人）",
+        "open": false,
+        "checked": false
+      },
+      {
+        "id": 6,
+        "name": "博士研究生招生数（人）",
+        "open": false,
+        "checked": false
+      },
+      {
+        "id": 333,
+        "name": "博士研究生在校生数（人）",
+        "open": false,
+        "checked": false
+      },
+      {
+        "id": 333,
+        "name": "博士研究生毕（结）业生数（人）",
+        "open": false,
+        "checked": false
+      },
+      {
+        "id": 333,
+        "name": "博士研究生预计毕业生数（人）",
+        "open": false,
+        "checked": false
+      }
+    ],
+    "checked": false
+  },
+  {
+    "id": 1,
+    "name": "硕士研究生",
+    "open": false,
+    "children": [
+      {
+        "id": 2,
+        "name": "硕士研究生毕（结）业生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 3,
+        "name": "女研究生毕（结）业生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 17,
+        "name": "硕士研究生在校生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 17,
+        "name": "硕士研究生毕（结）业生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 17,
+        "name": "硕士研究生招生数（人）",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 17,
+        "name": "硕士研究生预计毕业生数（人）",
+        "open": false,
+        "checked": true
+      }
+    ],
+    "checked": false
+  },
+  {
+    "id": 1,
+    "name": "授予学位",
+    "open": false,
+    "children": [
+      {
+        "id": 2,
+        "name": "授予学位数",
+        "open": false,
+        "checked": true
+      },
+      {
+        "id": 3,
+        "name": "授予学位数（人）",
+        "open": false,
+        "checked": true
+      }
+    ],
+    "checked": false
+  }
+]

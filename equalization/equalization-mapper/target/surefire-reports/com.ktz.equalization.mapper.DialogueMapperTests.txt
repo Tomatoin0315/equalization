@@ -1,0 +1,37 @@
+-------------------------------------------------------------------------------
+Test set: com.ktz.equalization.mapper.DialogueMapperTests
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 1.941 s <<< FAILURE! - in com.ktz.equalization.mapper.DialogueMapperTests
+insertOnetTest(com.ktz.equalization.mapper.DialogueMapperTests)  Time elapsed: 0.074 s  <<< ERROR!
+org.springframework.dao.DuplicateKeyException: 
+
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5' for key 'dialogue.PRIMARY'
+### The error may involve com.ktz.equalization.mapper.DialogueMapper.insertOne-Inline
+### The error occurred while setting parameters
+### SQL: insert into dialogue         values (?, ?, ?, ?, ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5' for key 'dialogue.PRIMARY'
+; Duplicate entry '5' for key 'dialogue.PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5' for key 'dialogue.PRIMARY'
+	at com.ktz.equalization.mapper.DialogueMapperTests.insertOnetTest(DialogueMapperTests.java:30)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '5' for key 'dialogue.PRIMARY'
+	at com.ktz.equalization.mapper.DialogueMapperTests.insertOnetTest(DialogueMapperTests.java:30)
+
+updateTest(com.ktz.equalization.mapper.DialogueMapperTests)  Time elapsed: 0.008 s  <<< ERROR!
+org.mybatis.spring.MyBatisSystemException: 
+nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error updating database.  Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String
+### Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String
+	at com.ktz.equalization.mapper.DialogueMapperTests.updateTest(DialogueMapperTests.java:49)
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+
+### Error updating database.  Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String
+### Cause: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String
+	at com.ktz.equalization.mapper.DialogueMapperTests.updateTest(DialogueMapperTests.java:49)
+Caused by: java.lang.IllegalArgumentException: invalid comparison: java.time.LocalDateTime and java.lang.String
+	at com.ktz.equalization.mapper.DialogueMapperTests.updateTest(DialogueMapperTests.java:49)
+
+countTest(com.ktz.equalization.mapper.DialogueMapperTests)  Time elapsed: 0.003 s  <<< ERROR!
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.ktz.equalization.mapper.DialogueMapper.count'.  It's likely that neither a Result Type nor a Result Map was specified.
+	at com.ktz.equalization.mapper.DialogueMapperTests.countTest(DialogueMapperTests.java:69)
+Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.ktz.equalization.mapper.DialogueMapper.count'.  It's likely that neither a Result Type nor a Result Map was specified.
+	at com.ktz.equalization.mapper.DialogueMapperTests.countTest(DialogueMapperTests.java:69)
+

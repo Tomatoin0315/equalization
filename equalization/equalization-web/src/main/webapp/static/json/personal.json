@@ -1,0 +1,31 @@
+{
+  "code": 0,
+  "msg": "ok",
+  "data": [
+    {
+      "username": "张三",
+      "mobel": "13245890583",
+      "email": "234890@qq.com",
+      "role": "管理员"
+    },
+    {
+      "username": "李四",
+      "mobel": "13245890583",
+      "email": "234890@qq.com",
+      "role": "普通用户"
+    },
+    {
+      "username": "小明",
+      "mobel": "13245890583",
+      "email": "234890@qq.com",
+      "role": "管理员"
+    },
+    {
+      "username": "小红",
+      "mobel": "13245890583",
+      "email": "234890@qq.com",
+      "role": "管理员"
+    }
+  ],
+  "count": 100
+}

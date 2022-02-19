@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <title>基本公共服务均等化智能服务系统</title>
+    <link rel="stylesheet" href="../../static/libs/layui/css/layui.css">
+    <link rel="stylesheet" href="../../static/css/index.css">
+    <link rel="stylesheet" href="../../static/libs/layui/css/modules/layer/default/layer.css">
+    <script src="../../static/js/jquery.min.js"></script>
+    <script src="../../static/libs/layui/layui.js"></script>
+    <script src="../../static/js/jquery.min.js"></script>
+    <script src="../../static/js/index.js"></script>
+</head>
+
+<body>
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md3">
+                <ul class="layui-nav layui-nav-tree layui-nav-side list" lay-filter="test">
+                    <li class="layui-nav-item" th:each="permission : ${permissions}">
+                        <dd class="show restore" th:if="${#lists.isEmpty(permission.childPermission)}" th:text="${permission.name}" th:data-url="${permission.url}"></dd>
+                        <a th:if="${!#lists.isEmpty(permission.childPermission)}" th:text="${permission.name}" href="javascript:;"></a>
+                        <dl th:if="${!#lists.isEmpty(permission.childPermission)}" class="layui-nav-child">
+                            <dd th:each="child : ${permission.childPermission}" th:text="${child.name}" th:data-url="${child.url}" class="show restore" data-id="power"></dd>
+                        </dl>
+                    </li>
+                    <!--<li class="layui-nav-item">
+                        <dd class="show restore" data-id="personal">个人信息管理</dd>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">系统管理</a>
+                        <dl class="layui-nav-child">
+                            <dd class="show restore" data-id="power">权限管理</dd>
+                            <dd class="show restore" data-id="role">角色管理</dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">用户管理</a>
+                        <dl class="layui-nav-child">
+                            <dd class="show restore" data-id="checkUser">查看用户</dd>
+                            <dd class="show restore" data-id="add">新增用户</dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">政策信息管理</a>
+                        <dl class="layui-nav-child">
+                            <dd class="show restore" data-id="policy">查看政策信息</dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">经济数据管理</a>
+                        <dl class="layui-nav-child">
+                            <dd class="show restore" data-id="upload">上传经济数据</dd>
+                            <dd class="show restore" data-id="economics">查看经济数据</dd>
+                        </dl>
+                    </li>-->
+                </ul>
+            </div>
+            <div class="layui-col-md9">
+                <div class="layui-container">
+                    <div class="layui-row">
+                        <div class="layui-col-md3 layui-col-md-offset10">
+                            <ul class="layui-nav me">
+                                <li class="layui-nav-item">
+                                    <a href="javascript:;">admin</a>
+                                    <dl class="layui-nav-child">
+                                        <dd><a href="">修改密码</a></dd>
+                                        <dd><a href="">退出登录</a></dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="layui-row">
+                        <div id="content" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        //注意：导航 依赖 element 模块，否则无法进行功能性操作
+        layui.use('element', function () {
+            var element = layui.element;
+        });
+    </script>
+</body>
+
+</html>

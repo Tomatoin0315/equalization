@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.ktz.equalization.mapper.UserMapperTests" time="0.046" tests="8" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="14"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.class.path" value="C:\Users\Chloe\IdeaProjects\second\equalization\equalization-mapper\target\test-classes;C:\Users\Chloe\IdeaProjects\second\equalization\equalization-mapper\target\classes;C:\Users\Chloe\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Chloe\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-test\5.2.9.RELEASE\spring-test-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-core\5.2.9.RELEASE\spring-core-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-jcl\5.2.9.RELEASE\spring-jcl-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-context\5.2.9.RELEASE\spring-context-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-aop\5.2.9.RELEASE\spring-aop-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-beans\5.2.9.RELEASE\spring-beans-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-expression\5.2.9.RELEASE\spring-expression-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-tx\5.2.9.RELEASE\spring-tx-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-jdbc\5.2.9.RELEASE\spring-jdbc-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar;C:\Users\Chloe\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\Chloe\.m2\repository\com\alibaba\druid\1.1.10\druid-1.1.10.jar;C:\Users\Chloe\.m2\repository\org\mybatis\mybatis\3.4.6\mybatis-3.4.6.jar;C:\Users\Chloe\.m2\repository\org\mybatis\mybatis-spring\1.3.2\mybatis-spring-1.3.2.jar;C:\Users\Chloe\IdeaProjects\second\equalization\equalization-domain\target\equalization-dependencies.jar;C:\Users\Chloe\IdeaProjects\second\equalization\equalization-commons\target\equalization-dependencies.jar;C:\Users\Chloe\.m2\repository\com\alibaba\fastjson\1.2.62\fastjson-1.2.62.jar;C:\Users\Chloe\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.0\jackson-databind-2.10.0.jar;C:\Users\Chloe\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.0\jackson-core-2.10.0.jar;C:\Users\Chloe\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.0\jackson-annotations-2.10.0.jar;C:\Users\Chloe\.m2\repository\com\github\pagehelper\pagehelper\5.1.10\pagehelper-5.1.10.jar;C:\Users\Chloe\.m2\repository\com\github\jsqlparser\jsqlparser\2.0\jsqlparser-2.0.jar;C:\Users\Chloe\.m2\repository\org\projectlombok\lombok\1.18.12\lombok-1.18.12.jar;C:\Users\Chloe\.m2\repository\org\hibernate\hibernate-validator\5.4.1.Final\hibernate-validator-5.4.1.Final.jar;C:\Users\Chloe\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;C:\Users\Chloe\.m2\repository\org\jboss\logging\jboss-logging\3.3.0.Final\jboss-logging-3.3.0.Final.jar;C:\Users\Chloe\.m2\repository\com\fasterxml\classmate\1.3.1\classmate-1.3.1.jar;C:\Users\Chloe\.m2\repository\org\apache\poi\poi\3.17\poi-3.17.jar;C:\Users\Chloe\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\Chloe\.m2\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;C:\Users\Chloe\.m2\repository\org\apache\poi\poi-ooxml\3.17\poi-ooxml-3.17.jar;C:\Users\Chloe\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.17\poi-ooxml-schemas-3.17.jar;C:\Users\Chloe\.m2\repository\org\apache\xmlbeans\xmlbeans\2.6.0\xmlbeans-2.6.0.jar;C:\Users\Chloe\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\Chloe\.m2\repository\com\github\virtuald\curvesapi\1.04\curvesapi-1.04.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="14"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-14.0.1\bin"/>
+    <property name="sun.java.command" value="C:\Users\Chloe\AppData\Local\Temp\surefire14232722699621249021\surefirebooter10603739143991221061.jar C:\Users\Chloe\AppData\Local\Temp\surefire14232722699621249021 2021-03-06T22-57-02_029-jvmRun1 surefire14789639873814194920tmp surefire_016979426876166471395tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Chloe\IdeaProjects\second\equalization\equalization-mapper\target\test-classes;C:\Users\Chloe\IdeaProjects\second\equalization\equalization-mapper\target\classes;C:\Users\Chloe\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Chloe\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-test\5.2.9.RELEASE\spring-test-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-core\5.2.9.RELEASE\spring-core-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-jcl\5.2.9.RELEASE\spring-jcl-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-context\5.2.9.RELEASE\spring-context-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-aop\5.2.9.RELEASE\spring-aop-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-beans\5.2.9.RELEASE\spring-beans-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-expression\5.2.9.RELEASE\spring-expression-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-tx\5.2.9.RELEASE\spring-tx-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\org\springframework\spring-jdbc\5.2.9.RELEASE\spring-jdbc-5.2.9.RELEASE.jar;C:\Users\Chloe\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar;C:\Users\Chloe\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\Chloe\.m2\repository\com\alibaba\druid\1.1.10\druid-1.1.10.jar;C:\Users\Chloe\.m2\repository\org\mybatis\mybatis\3.4.6\mybatis-3.4.6.jar;C:\Users\Chloe\.m2\repository\org\mybatis\mybatis-spring\1.3.2\mybatis-spring-1.3.2.jar;C:\Users\Chloe\IdeaProjects\second\equalization\equalization-domain\target\equalization-dependencies.jar;C:\Users\Chloe\IdeaProjects\second\equalization\equalization-commons\target\equalization-dependencies.jar;C:\Users\Chloe\.m2\repository\com\alibaba\fastjson\1.2.62\fastjson-1.2.62.jar;C:\Users\Chloe\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.0\jackson-databind-2.10.0.jar;C:\Users\Chloe\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.0\jackson-core-2.10.0.jar;C:\Users\Chloe\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.0\jackson-annotations-2.10.0.jar;C:\Users\Chloe\.m2\repository\com\github\pagehelper\pagehelper\5.1.10\pagehelper-5.1.10.jar;C:\Users\Chloe\.m2\repository\com\github\jsqlparser\jsqlparser\2.0\jsqlparser-2.0.jar;C:\Users\Chloe\.m2\repository\org\projectlombok\lombok\1.18.12\lombok-1.18.12.jar;C:\Users\Chloe\.m2\repository\org\hibernate\hibernate-validator\5.4.1.Final\hibernate-validator-5.4.1.Final.jar;C:\Users\Chloe\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;C:\Users\Chloe\.m2\repository\org\jboss\logging\jboss-logging\3.3.0.Final\jboss-logging-3.3.0.Final.jar;C:\Users\Chloe\.m2\repository\com\fasterxml\classmate\1.3.1\classmate-1.3.1.jar;C:\Users\Chloe\.m2\repository\org\apache\poi\poi\3.17\poi-3.17.jar;C:\Users\Chloe\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\Chloe\.m2\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;C:\Users\Chloe\.m2\repository\org\apache\poi\poi-ooxml\3.17\poi-ooxml-3.17.jar;C:\Users\Chloe\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.17\poi-ooxml-schemas-3.17.jar;C:\Users\Chloe\.m2\repository\org\apache\xmlbeans\xmlbeans\2.6.0\xmlbeans-2.6.0.jar;C:\Users\Chloe\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\Chloe\.m2\repository\com\github\virtuald\curvesapi\1.04\curvesapi-1.04.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Chloe"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2020-04-14"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-14.0.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Chloe\IdeaProjects\second\equalization\equalization-mapper"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Chloe\AppData\Local\Temp\surefire14232722699621249021\surefirebooter10603739143991221061.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="14.0.1+7"/>
+    <property name="user.name" value="Chloe"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="GBK"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Chloe\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Chloe\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2020.3.1"/>
+    <property name="java.version" value="14.0.1"/>
+    <property name="user.dir" value="C:\Users\Chloe\IdeaProjects\second\equalization\equalization-mapper"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-14.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;&quot;;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\SysWOW64&quot;;ONAR_RUNNER_HOME%\bin;C:\Users\Chloe\anaconda3\Scripts;C:\Program Files (x86)\scala\bin;&quot;C:\Windows\system32;&quot;;&quot;C:\Windows;&quot;;&quot;C:\Windows\System32\Wbem;&quot;;C:\Program Files (x86)\scala\bin;C:\hadoop-3.0.1\hadoop-3.0.1\bin;C:\spark-2.3.0-bin-hadoop2.6\spark-2.3.0-bin-hadoop2.6\bin;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Users\Chloe\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\wbem;C:\Windows;C:\Users\Chloe\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip\;C:\mingw64\bin;C:\Users\Chloe\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Chloe\AppData\Roaming\npm;C:\Program Files\Java\jdk-14.0.1\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Users\Chloe\anaconda3\Scripts;C:\scala-2.10.6\scala-2.10.6\bin;C:\hadoop-3.0.1\hadoop-3.0.1\bin;C:\spark-3.0.0-bin-hadoop2.7\spark-3.0.0-bin-hadoop2.7\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="14.0.1+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="58.0"/>
+  </properties>
+  <testcase name="insertOneTest" classname="com.ktz.equalization.mapper.UserMapperTests" time="0.005"/>
+  <testcase name="deleteOneTest" classname="com.ktz.equalization.mapper.UserMapperTests" time="0.002"/>
+  <testcase name="deleteMulti" classname="com.ktz.equalization.mapper.UserMapperTests" time="0.003"/>
+  <testcase name="listAllTest" classname="com.ktz.equalization.mapper.UserMapperTests" time="0.006"/>
+  <testcase name="updateTest" classname="com.ktz.equalization.mapper.UserMapperTests" time="0.011"/>
+  <testcase name="getOneTest" classname="com.ktz.equalization.mapper.UserMapperTests" time="0.002"/>
+  <testcase name="listTest" classname="com.ktz.equalization.mapper.UserMapperTests" time="0.006"/>
+  <testcase name="countTest" classname="com.ktz.equalization.mapper.UserMapperTests" time="0.003">
+    <error message="nested exception is org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement &apos;com.ktz.equalization.mapper.UserMapper.count&apos;.  It&apos;s likely that neither a Result Type nor a Result Map was specified." type="org.mybatis.spring.MyBatisSystemException">org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.ktz.equalization.mapper.UserMapper.count'.  It's likely that neither a Result Type nor a Result Map was specified.
+	at com.ktz.equalization.mapper.UserMapperTests.countTest(UserMapperTests.java:81)
+Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.ktz.equalization.mapper.UserMapper.count'.  It's likely that neither a Result Type nor a Result Map was specified.
+	at com.ktz.equalization.mapper.UserMapperTests.countTest(UserMapperTests.java:81)
+</error>
+    <system-out><![CDATA[Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a2eea2a] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@5eccd3b9] will not be managed by Spring
+==>  Preparing: select count(*) from user WHERE username = ? and email = ? 
+==> Parameters: 张三(String), 12010031@qq.com(String)
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a2eea2a]
+]]></system-out>
+  </testcase>
+</testsuite>

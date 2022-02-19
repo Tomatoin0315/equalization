@@ -1,0 +1,10 @@
+body{
+  padding: auto;
+  margin: auto;
+}
+.layui-table th{
+  text-align: center;
+}
+.layui-table tr{
+  text-align: center;
+}

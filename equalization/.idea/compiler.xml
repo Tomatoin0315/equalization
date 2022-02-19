@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="equalization-domain" />
+        <module name="equalization-system" />
+        <module name="equalization-web" />
+        <module name="equalization-qa" />
+        <module name="equalization-commons" />
+        <module name="equalization-mapper" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="equalization" target="1.5" />
+      <module name="equalization-commons" target="1.8" />
+      <module name="equalization-dependencies" target="1.8" />
+      <module name="equalization-domain" target="1.8" />
+      <module name="equalization-mapper" target="1.8" />
+      <module name="equalization-qa" target="1.8" />
+      <module name="equalization-system" target="1.8" />
+      <module name="equalization-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>权限管理</title>
+  <!--/*-->
+  <link rel="stylesheet" href="../../static/libs/layui/css/layui.css">
+  <script src="../../static/libs/layui/layui.js"></script>
+  <!--*/-->
+</head>
+<body>
+<div style="padding-top: 50px;">
+  <table id="demoTb1" lay-filter="test"></table>
+</div>
+</body>
+<script type="text/html" id="checkDel">
+  <button type="button" class="layui-btn layui-btn-danger" lay-event="delCheck">删除选中</button>
+</script>
+<!-- 表格操作列 -->
+<script type="text/html" id="tbBar">
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">修改</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script>
+  layui.config({
+    base: '../../static/libs/layui/lay/modules/'
+  }).use(['treeTable', 'layer'], function () {
+    var $ = layui.jquery;
+    var treeTable = layui.treeTable;
+    var layer = layui.layer;
+
+    var data = [{
+      "id": '1',
+      "name": 'xxx',
+      "url": "xxx",
+      "createTime": '2019/11/18 10:44:00',
+      "updateTime": '2019/11/18 10:44:00',
+    }, {
+      "parentId": '1',
+      "id": '1_1',
+      "name": 'xxx',
+      "url": "xxx",
+      "createTime": '2019/11/18 10:44:00',
+      "updateTime": '2019/11/18 10:44:00',
+    },{
+      "id": '2',
+      "name": 'xxx',
+      "url": "xxx",
+      "createTime": '2019/11/18 10:44:00',
+      "updateTime": '2019/11/18 10:44:00',
+    },{
+      "parentId": '2',
+      "id": '2_1',
+      "name": 'xxx',
+      "url": "xxx",
+      "createTime": '2019/11/18 10:44:00',
+      "updateTime": '2019/11/18 10:44:00',
+    }];
+
+    // 渲染表格
+    var insTb = treeTable.render({
+      elem: '#demoTb1',
+      url: "/permission/list",
+      // data: data,  // 数据
+      toolbar: "#checkDel",
+      tree: {
+        iconIndex: 2,    // 折叠图标显示在第几列
+        isPidData: true,  // 是否是pid形式数据
+        pidName: "parentId"
+      },
+      cols: [
+        [
+          {type: 'checkbox'},
+          {field: 'id', title: 'ID'},
+          {field: 'name', title: '权限名称'},
+          {field: 'url', title: '授权路径'},
+           {
+          field: 'createTime', title: '创建时间', width: 160, sort: true,
+        }
+          , {
+          field: 'updateTime', title: '修改时间', sort: true,
+        },
+          {align: 'center', toolbar: '#tbBar', title: '操作'}
+        ]
+      ]
+    });
+
+    treeTable.on("tool(demoTb1)", function (obj) {
+      var data = obj.data;
+      var event = obj.event;
+
+      if (event === "del") {
+        obj.del();
+        // 调用后台接口，删除数据
+        $.ajax({
+          type: "DELETE",
+          url: '/permission/deleteOne/'+data.id,
+          dataType:"json",
+          success:function (resp) {
+            insTb.reload(resp);
+          }
+          }
+        )
+      }else if (event === "edit") {
+        layer.prompt({
+          formType: 2,
+          title: "权限名称",
+          value: data.name
+        }, function (value, index) {
+          obj.update({
+            name: value
+          });
+          layer.close(index);
+          // 调用后台接口，更新数据
+          alert(JSON.stringify(data));
+          $.ajax({
+            url:'permission/update',
+            type:'POST',
+            contentType:"application/json",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            success:function (resp){
+              obj.reload();
+            }
+          })
+        });
+      }
+    });
+
+    treeTable.on("toolbar(demoTb1)", function (obj) {
+      var event = obj.event;
+      var checkStatus = insTb.checkStatus();
+
+      if (event === "delCheck") {
+        var ids = [];
+        for (let item of checkStatus) {
+          ids.push(item.id);
+        }
+        console.log(ids);
+        // insTb.reload();
+        $.ajax({
+          type: "DELETE",
+          url: '/permission/deleteMulti',
+          contentType:"application/json",
+          data: JSON.stringify(ids),
+          dataType:"JSON",
+          success:function () {
+            insTb.reload();
+          }
+        })
+      }
+    });
+  });
+</script>
+</html>

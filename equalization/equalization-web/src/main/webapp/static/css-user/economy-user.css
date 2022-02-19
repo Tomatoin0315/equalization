@@ -1,0 +1,16 @@
+.query{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+select{
+  width: 200px;
+  height: 38px;
+  line-height: 38px;
+  border-radius: 2px;
+}
+.layui-form{
+  display: inline-block;
+}
+.tree{
+  margin-left: -110px;
+}

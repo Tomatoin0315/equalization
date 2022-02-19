@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/equalization.iml" filepath="$PROJECT_DIR$/equalization.iml" />
+      <module fileurl="file://$PROJECT_DIR$/equalization-commons/equalization-commons.iml" filepath="$PROJECT_DIR$/equalization-commons/equalization-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/equalization-dependencies/equalization-dependencies.iml" filepath="$PROJECT_DIR$/equalization-dependencies/equalization-dependencies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/equalization-domain/equalization-domain.iml" filepath="$PROJECT_DIR$/equalization-domain/equalization-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/equalization-mapper/equalization-mapper.iml" filepath="$PROJECT_DIR$/equalization-mapper/equalization-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/equalization-qa/equalization-qa.iml" filepath="$PROJECT_DIR$/equalization-qa/equalization-qa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/equalization-system/equalization-system.iml" filepath="$PROJECT_DIR$/equalization-system/equalization-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/equalization-web/equalization-web.iml" filepath="$PROJECT_DIR$/equalization-web/equalization-web.iml" />
+    </modules>
+  </component>
+</project>

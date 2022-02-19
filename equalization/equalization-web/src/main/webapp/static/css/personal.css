@@ -1,0 +1,10 @@
+body{
+  padding: auto;
+  margin: auto;
+}
+#content{
+  width: 720px;
+}
+.layui-table-cell{
+  text-align: center;
+}

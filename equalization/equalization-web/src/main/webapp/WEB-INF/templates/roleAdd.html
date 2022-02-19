@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新增</title>
+  <link rel="stylesheet" href="../../static/libs/layui/css/layui.css">
+  <link rel="stylesheet" href="../../static/css/roleAdd.css">
+  <link rel="stylesheet" href="../../static/libs/layui/css/modules/layer/default/layer.css">
+  <script src="../../static/js/jquery.min.js"></script>
+  <script src="../../static/libs/layui/layui.js"></script>
+  <style type="text/css">
+  body{
+    width: 100%;
+    height: 100%;
+  }
+  .treeSelect .layui-select-title span {
+    line-height: 38px;
+  }
+  .layui-form-select dl{
+    padding: 0;
+  }
+  </style>
+</head>
+
+<body>
+  <div>
+    <form class="layui-form role" action="">
+      <div class="layui-form-item">
+        <label class="layui-form-label">角色名称:</label>
+        <div class="layui-input-block">
+          <input type="text" name="name" id="roleName" required lay-verify="required" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">父角色:</label>
+        <div class="layui-input-block">
+          <div id="roleSelect" class="layui-unselect layui-form-select treeSelect">
+            <div class="layui-select-title">
+              <span class="layui-input layui-unselect" id="treeTest">选择父角色</span>
+              <input type="hidden" id="parentId" name="parentId">
+              <i class="layui-edge"></i>
+            </div>
+            <dl class="layui-anim layui-anim-upbit">
+              <dd>
+                <ul id="treeUl"></ul>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">权限：</label>
+        <div class="layui-input-block">
+          <div id="test7" class="demo-tree"></div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script>
+    var tree;
+    layui.use(['tree', 'form'], function () {
+      tree = layui.tree;
+      var layer = layui.layer, form = layui.form;
+      //模拟数据2
+      var data2 = [{
+        title: '早餐'
+        ,id: 1
+        ,children: [{
+          title: '油条'
+          ,id: 5
+        },{
+          title: '包子'
+          ,id: 6
+        },{
+          title: '豆浆'
+          ,id: 7
+        }]
+      },{
+        title: '午餐'
+        ,id: 2
+        ,children: [{
+          title: '藜蒿炒腊肉'
+          ,id: 8
+        },{
+          title: '西湖醋鱼'
+          ,id: 9
+        },{
+          title: '小白菜'
+          ,id: 10
+        },{
+          title: '海带排骨汤'
+          ,id: 11
+        }]
+      },{
+        title: '晚餐'
+        ,id: 3
+        ,children: [{
+          title: '红烧肉'
+          ,id: 12
+        },{
+          title: '番茄炒蛋'
+          ,id: 13
+        }]
+      },{
+        title: '夜宵'
+        ,id: 4
+        ,children: [{
+          title: '小龙虾'
+          ,id: 14
+        },{
+          title: '香辣蟹'
+          ,id: 15
+        },{
+          title: '烤鱿鱼'
+          ,id: 16
+        }]
+      }];
+
+      $.get("/permission/listTree", {"id": ""}, function (resp) {
+        // console.log(resp);
+        tree.render({
+          id: "permission",
+          elem: '#test7'
+          ,data: resp
+          ,showCheckbox: true
+        });
+      }, "json");
+
+      $.get("/role/listTree", function (resp) {
+        // console.log(resp);
+        tree.render({
+          id: "parent",
+          elem: '#treeUl',
+          data: resp,
+          click: function (obj) {
+            // console.log(obj.data); //得到当前点击的节点数据
+            var data = obj.data;
+            var othis = $(obj.elem).parents(".layui-form-select");
+            othis.removeClass("layui-form-selected").find(".layui-select-title span").html(obj.data.title).end().find("input:hidden[name='parentId']").val(obj.data.id);
+          }
+        });
+      }, "json");
+
+      $(".treeSelect").on("click", ".layui-select-title", function(e) {
+        $(".layui-form-select").not($(this).parents(".layui-form-select")).removeClass("layui-form-selected");
+        $(this).parents(".treeSelect").toggleClass("layui-form-selected");
+        layui.stope(e);
+      }).on("click", "dl i", function(e) {
+        layui.stope(e);
+      });
+      $(document).on("click", function(e) {
+        $(".layui-form-select").removeClass("layui-form-selected");
+      });
+
+    });
+
+    function addRole(index) {
+      var name = $("#roleName").val();
+      var parentId = $("#parentId").val();
+      var data = tree.getChecked("permission");
+      $.post("/role/insert", {
+        "parentId": parentId,
+        "name": name,
+      }, function (resp) {
+        // console.log(resp);
+        if (resp.status === 200) {
+          var ids = [];
+          for (let tree of data) {
+            ids = ids.concat(convert(tree));
+          }
+          // console.log(ids);
+          var rolePermissions = [];
+          for (let id of ids) {
+            rolePermissions.push({
+              roleId: resp.data.id,
+              permissionId: id
+            });
+          }
+          // console.log(rolePermissions);
+          $.ajax({
+            url: "/rolePermissions",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(rolePermissions),
+            dataType: "json",
+            success: function (resp) {
+              console.log(resp);
+              if (resp.status === 200) {
+                parent.layer.msg("新增角色成功");
+                parent.layer.close(index);
+                parent.insTb.reload();
+              }
+            }
+          });
+        }
+      }, "json");
+    }
+
+    function convert(tree) {
+      var ids = [];
+      ids.push(tree.id);
+      for (let child of tree.children) {
+        ids = ids.concat(convert(child));
+      }
+      return ids;
+    }
+  </script>
+</body>
+
+</html>
